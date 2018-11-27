@@ -15,84 +15,81 @@
 	</head>
 
 	<body>
-		<!-- <canvas id="cvs" width="400" height="400"></canvas> -->
+		<canvas id="cvs" width="400" height="400"></canvas>
 	</body>
 	<script>
-		alert('你能考上')
-		alert('你能考上')
-		alert('你能考上')
-		alert('重要的事情说三遍')
-		// var cvs = document.getElementById('cvs');
-		// var ctx = cvs.getContext('2d');
-		// var x = 200;
-		// var y = 200;
-		// var r = 150;
+	
+		var cvs = document.getElementById('cvs');
+		var ctx = cvs.getContext('2d');
+		var x = 200;
+		var y = 200;
+		var r = 150;
 
-		// function toDraw() {
-		// 	ctx.clearRect(0,0,cvs.width,cvs.height);
-		// 	for(var i = 0; i < 60; i++) {
-		// 		ctx.beginPath();
-		// 		ctx.moveTo(x, y);
-		// 		ctx.arc(x, y, r, i * 6 * Math.PI / 180, (i + 1) * 6 * Math.PI / 180, false);
-		// 		ctx.stroke();
-		// 		ctx.closePath();
-		// 	}
+		function toDraw() {
+			ctx.clearRect(0,0,cvs.width,cvs.height);
+			for(var i = 0; i < 60; i++) {
+				ctx.beginPath();
+				ctx.moveTo(x, y);
+				ctx.arc(x, y, r, i * 6 * Math.PI / 180, (i + 1) * 6 * Math.PI / 180, false);
+				ctx.stroke();
+				ctx.closePath();
+			}
 
-		// 	ctx.beginPath();
-		// 	ctx.moveTo(x, y);
-		// 	ctx.arc(x, y, r * 19 / 20, 0, 2 * Math.PI, false);
-		// 	ctx.fillStyle = '#fff';
-		// 	ctx.fill();
-		// 	ctx.closePath();
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.arc(x, y, r * 19 / 20, 0, 2 * Math.PI, false);
+			ctx.fillStyle = '#fff';
+			ctx.fill();
+			ctx.closePath();
 
-		// 	for(var i = 0; i < 12; i++) {
-		// 		ctx.lineWidth = 3;
-		// 		ctx.beginPath();
-		// 		ctx.moveTo(x, y);
-		// 		ctx.arc(x, y, r, i * 30 * Math.PI / 180, (i + 1) * 30 * Math.PI / 180, false);
-		// 		ctx.stroke();
-		// 		ctx.closePath();
-		// 	}
+			for(var i = 0; i < 12; i++) {
+				ctx.lineWidth = 3;
+				ctx.beginPath();
+				ctx.moveTo(x, y);
+				ctx.arc(x, y, r, i * 30 * Math.PI / 180, (i + 1) * 30 * Math.PI / 180, false);
+				ctx.stroke();
+				ctx.closePath();
+			}
 
-		// 	ctx.beginPath();
-		// 	ctx.moveTo(x, y);
-		// 	ctx.arc(x, y, r * 18 / 20, 0, 2 * Math.PI, false);
-		// 	ctx.fillStyle = '#fff';
-		// 	ctx.fill();
-		// 	ctx.closePath();
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.arc(x, y, r * 18 / 20, 0, 2 * Math.PI, false);
+			ctx.fillStyle = '#fff';
+			ctx.fill();
+			ctx.closePath();
 
-		// 	var date = new Date();
-		// 	var hour = date.getHours();
-		// 	var miu = date.getMinutes();
-		// 	var sec = date.getSeconds();
+			var date = new Date();
+			var hour = date.getHours();
+			var miu = date.getMinutes();
+			var sec = date.getSeconds();
 
-		// 	var h = (-90 + hour * 30 + miu / 2) * Math.PI / 180;
-		// 	var m = (-90 + miu * 6) * Math.PI / 180;
-		// 	var s = (-90 + sec * 6) * Math.PI / 180;
+			var h = (-90 + hour * 30 + miu / 2) * Math.PI / 180;
+			var m = (-90 + miu * 6) * Math.PI / 180;
+			var s = (-90 + sec * 6) * Math.PI / 180;
 
-		// 	ctx.lineWidth = 5;
-		// 	ctx.beginPath();
-		// 	ctx.moveTo(x, y);
-		// 	ctx.arc(x, y, r * 10 / 20, h, h, false);
-		// 	ctx.stroke();
-		// 	ctx.closePath();
+			ctx.lineWidth = 5;
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.arc(x, y, r * 10 / 20, h, h, false);
+			ctx.stroke();
+			ctx.closePath();
 
-		// 	ctx.lineWidth = 3;
-		// 	ctx.beginPath();
-		// 	ctx.moveTo(x, y);
-		// 	ctx.arc(x, y, r * 14 / 20, m, m, false);
-		// 	ctx.stroke();
-		// 	ctx.closePath();
+			ctx.lineWidth = 3;
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.arc(x, y, r * 14 / 20, m, m, false);
+			ctx.stroke();
+			ctx.closePath();
 
-		// 	ctx.lineWidth = 1;
-		// 	ctx.beginPath();
-		// 	ctx.moveTo(x, y);
-		// 	ctx.arc(x, y, r * 17 / 20, s, s, false);
-		// 	ctx.stroke();
-		// 	ctx.closePath();
-		// }
-		// toDraw();
-		// setInterval(toDraw,1000);
+			ctx.lineWidth = 1;
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.arc(x, y, r * 17 / 20, s, s, false);
+			ctx.stroke();
+			ctx.closePath();
+		}
+		toDraw();
+		setInterval(toDraw,1000);
 	</script>
 
 </html>
