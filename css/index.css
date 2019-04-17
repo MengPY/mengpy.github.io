@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   width: 100%; }
 
@@ -23,6 +24,22 @@ input:-ms-input-placeholder {
   color: #F6F8F9;
   opacity: .4; }
 
+@keyframes ballMove {
+  0% {
+    top: 80px; }
+  50% {
+    top: 40px; }
+  100% {
+    top: 80px; } }
+
+@-webkit-keyframes ballMove {
+  0% {
+    top: 80px; }
+  50% {
+    top: 40px; }
+  100% {
+    top: 80px; } }
+
 /***************************** PC *********************************/
 /** Header **/
 header.navbar {
@@ -33,15 +50,23 @@ header.navbar {
   margin-bottom: 0; }
   header.navbar .container {
     margin-top: 5px; }
+  header.navbar .logo-holder .logo {
+    float: left; }
   header.navbar .logo-holder img {
     position: relative;
-    top: -5px; }
-  header.navbar .logo-holder span {
+    top: -5px;
+    float: left; }
+  header.navbar .logo-holder .logo-title {
+    float: left;
     position: relative;
-    top: 5px;
-    font-size: 14px;
-    color: #08182B;
-    font-weight: bold; }
+    top: 16px; }
+    header.navbar .logo-holder .logo-title h2 {
+      font-size: 18px;
+      color: #08182B;
+      font-weight: bold; }
+    header.navbar .logo-holder .logo-title p {
+      font-size: 12px;
+      color: #08182B; }
   header.navbar .navbar-toggle {
     border-color: #fff; }
     header.navbar .navbar-toggle:hover, header.navbar .navbar-toggle:focus {
@@ -62,7 +87,7 @@ header.navbar {
       height: 50px;
       text-align: center;
       line-height: 50px; }
-      header.navbar .navbar-left a:hover {
+      header.navbar .navbar-left a:hover, header.navbar .navbar-left a:focus {
         background: #fff;
         color: #2699FB; }
     header.navbar .navbar-left .sub {
@@ -127,6 +152,13 @@ header.navbar {
   .banner img {
     margin-top: 100px;
     margin-bottom: 50px; }
+  .banner .banner-ball {
+    margin: 0;
+    position: absolute;
+    top: 80px;
+    animation: ballMove 5s infinite;
+    -webkit-animation: ballMove 6s infinite;
+    /* Safari 和 Chrome */ }
 
 /** content **/
 .main-content {
