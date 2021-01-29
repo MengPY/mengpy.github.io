@@ -1,95 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>国贸云链操作手册</title>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>2018-02-06</title>
-		<style>
-			
-			canvas{
-				position:absolute;
-				top:0;right:0;bottom:0;left:0;
-				margin:auto;
-			}
-		</style>
-	</head>
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-	<body>
-		<canvas id="cvs" width="400" height="400"></canvas>
-	</body>
-	<script>
-		var empty;
-		var cvs = document.getElementById('cvs');
-		var ctx = cvs.getContext('2d');
-		var x = 200;
-		var y = 200;
-		var r = 150;
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">    
+    <link href="./index.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/home.png" alt="">
+            <img src="./images/pointer.png" class="pointer" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img3.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img4.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img5.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img6.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img7.jpg" alt="">
+            <video class="video" controls>
+              <source src="./videos/register.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img8.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img9.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img10.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img11.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img12.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img13.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img14.jpg" alt="">
+            <video class="video" controls>
+              <source src="./videos/attest.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img15.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img16.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img17.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img18.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img19.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img20.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-src="./images/img21.jpg" alt="">
+            <video class="video" controls>
+              <source src="./videos/cart.mp4" type="video/mp4">
+            </video>
+          </div>
 
-		function toDraw() {
-			ctx.clearRect(0,0,cvs.width,cvs.height);
-			for(var i = 0; i < 60; i++) {
-				ctx.beginPath();
-				ctx.moveTo(x, y);
-				ctx.arc(x, y, r, i * 6 * Math.PI / 180, (i + 1) * 6 * Math.PI / 180, false);
-				ctx.stroke();
-				ctx.closePath();
-			}
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+      
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      
+      <!-- 如果需要滚动条 -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="./jquery-1.11.3.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script> -->
+    <script src="./swiper/swiper-bundle.js"> </script>
+    <script>
+      const imgs = document.querySelectorAll("img");
+      const observer = new IntersectionObserver(nodes => {
+          nodes.forEach(v => {
+              if (v.isIntersecting && !v.target.src && v.target.dataset.src) { // 判断是否进入可视区域
+                  v.target.src = v.target.dataset.src; // 赋值加载图片
+                  observer.unobserve(v.target); // 停止监听已加载的图片
+              }
+          });
+      });
+      imgs.forEach(v => observer.observe(v));
 
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.arc(x, y, r * 19 / 20, 0, 2 * Math.PI, false);
-			ctx.fillStyle = '#fff';
-			ctx.fill();
-			ctx.closePath();
+      let swiperOpts = {
+        // direction: 'vertical', // 垂直切换选项
+        loop: false, // 循环模式选项
+        isReverse: false,
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        
+        // 如果需要前进后退按钮
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        
+        // 如果需要滚动条
+        // scrollbar: {
+        //   el: '.swiper-scrollbar',
+        // },
+      };
+      var mySwiper = new Swiper ('.swiper-container', swiperOpts)        
+      // console.log(mySwiper)
 
-			for(var i = 0; i < 12; i++) {
-				ctx.lineWidth = 3;
-				ctx.beginPath();
-				ctx.moveTo(x, y);
-				ctx.arc(x, y, r, i * 30 * Math.PI / 180, (i + 1) * 30 * Math.PI / 180, false);
-				ctx.stroke();
-				ctx.closePath();
-			}
 
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.arc(x, y, r * 18 / 20, 0, 2 * Math.PI, false);
-			ctx.fillStyle = '#fff';
-			ctx.fill();
-			ctx.closePath();
+      function reset(init){
+          var el = document.body;
+          let width = document.documentElement.clientWidth,
+              height = document.documentElement.clientHeight;
+          //在竖屏状态我们通过添加transform:rotate(90deg)，来让这个页面横过来
+          if(window.orientation == null || window.orientation === 180 || window.orientation === 0){//竖屏状态
+              el.style.webkitTransform = el.style.transform = `rotate(90deg)`;
+              el.style.width = `${height}px`;
+              el.style.height = `${width}px`;
+              el.style.webkitTransformOrigin = el.style.transformOrigin = `${width / 2}px center`;
+              //如果已经处于横屏状态就不做其他处理了
+              mySwiper.params.isReverse = true;
+          }else if(window.orientation === 90 || window.orientation === -90){//横屏状态
+              el.style.webkitTransform = el.style.transform = `rotate(0)`;
+              el.style.width = `${width}px`;
+              el.style.height = `${height}px`;
+              mySwiper.params.isReverse = false;
+          }
+      };
+      
 
-			var date = new Date();
-			var hour = date.getHours();
-			var miu = date.getMinutes();
-			var sec = date.getSeconds();
+      let timer = null;
+      let windowReset = function(e) {
+          clearTimeout(timer);
+          timer = setTimeout(reset, 300);
+      }
+      window.addEventListener('resize', windowReset, false);
 
-			var h = (-90 + hour * 30 + miu / 2) * Math.PI / 180;
-			var m = (-90 + miu * 6) * Math.PI / 180;
-			var s = (-90 + sec * 6) * Math.PI / 180;
+      if("onorientationchange" in window){
+        window.addEventListener('orientationchange', windowReset, false);
+      }
 
-			ctx.lineWidth = 5;
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.arc(x, y, r * 10 / 20, h, h, false);
-			ctx.stroke();
-			ctx.closePath();
 
-			ctx.lineWidth = 3;
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.arc(x, y, r * 14 / 20, m, m, false);
-			ctx.stroke();
-			ctx.closePath();
+      //这块宽高比例根据效果图来设置
+      const DesignWidth = 375;
+      const DesignHeight = 667;
+      const DesignRatio = DesignWidth / DesignHeight;
 
-			ctx.lineWidth = 1;
-			ctx.beginPath();
-			ctx.moveTo(x, y);
-			ctx.arc(x, y, r * 17 / 20, s, s, false);
-			ctx.stroke();
-			ctx.closePath();
-		}
-		toDraw();
-		setInterval(toDraw,1000);
-	</script>
+      function getScale(){
 
+          let width = document.documentElement.clientWidth,
+              height = document.documentElement.clientHeight;
+
+          if(window.orientation == null || window.orientation === 180 || window.orientation === 0){//竖屏状态
+            
+          }else {
+            [width, height] = [height, width];
+          }
+
+          let ratio = width / height;
+
+          let scale;
+
+          //通过计算实际手机宽高比和效果图的宽高比得出最终的所让比例
+          if(ratio > DesignRatio){
+            scale = height / (width / DesignRatio);
+          }else if(ratio < DesignRatio){
+            scale = width / (height * DesignRatio);
+          }else{
+            scale = 1;
+          }
+
+          // return scale;
+          let scaleStr = `scale(${scale})`;
+          $('.swiper-container').css({
+            'transform': scaleStr, 
+            '-webkit-transform': scaleStr
+          })
+      }
+      getScale();
+      reset();
+    </script>
+  </body>
 </html>
