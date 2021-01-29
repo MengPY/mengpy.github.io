@@ -173,7 +173,10 @@
       let timer = null;
       let windowReset = function(e) {
           clearTimeout(timer);
-          timer = setTimeout(reset, 300);
+          timer = setTimeout(() => {
+            reset();
+            getScale();
+          }, 300);
       }
       window.addEventListener('resize', windowReset, false);
 
@@ -218,8 +221,8 @@
             '-webkit-transform': scaleStr
           })
       }
-      getScale();
       reset();
+      getScale();
     </script>
   </body>
 </html>
