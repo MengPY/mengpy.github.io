@@ -1,1 +1,40 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>itg-web-app</title><link href="css/chunk-0431a037.b359ab96.css" rel="prefetch"><link href="css/chunk-304dce62.6cab0ee7.css" rel="prefetch"><link href="css/chunk-53fd742b.9c81ca9b.css" rel="prefetch"><link href="css/chunk-75404907.43ee3386.css" rel="prefetch"><link href="css/chunk-99f3e926.25482a66.css" rel="prefetch"><link href="css/chunk-f1f9a57c.8cfd4996.css" rel="prefetch"><link href="js/chunk-0431a037.a937af51.js" rel="prefetch"><link href="js/chunk-2d0a45cd.32d5a53e.js" rel="prefetch"><link href="js/chunk-2d0da5be.7f72342b.js" rel="prefetch"><link href="js/chunk-304dce62.d4428265.js" rel="prefetch"><link href="js/chunk-53fd742b.c70eb3de.js" rel="prefetch"><link href="js/chunk-75404907.489b66b3.js" rel="prefetch"><link href="js/chunk-99f3e926.be7ad64c.js" rel="prefetch"><link href="js/chunk-f1f9a57c.3263d56a.js" rel="prefetch"><link href="css/app.9eb76f12.css" rel="preload" as="style"><link href="css/chunk-vendors.5d9aed88.css" rel="preload" as="style"><link href="js/app.3efcdaed.js" rel="preload" as="script"><link href="js/chunk-vendors.587e44ec.js" rel="preload" as="script"><link href="css/chunk-vendors.5d9aed88.css" rel="stylesheet"><link href="css/app.9eb76f12.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but itg-web-app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="js/chunk-vendors.587e44ec.js"></script><script src="js/app.3efcdaed.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #paste {
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="paste">到此处粘贴</div> -->
+  <script>
+    // var paste = document.getElementById('paste')
+    document.onpaste = async function (e) {
+      var pastedText = undefined;
+      if (window.clientInformation) { // IE
+        pastedText = await window.clientInformation.clipboard.readText();
+      } else {
+        pastedText = e.originalEvent.clipboardData.getData('Text');//e.clipboardData.getData('text/plain');
+      }
+      console.log(pastedText)
+      var rows = pastedText.split('\n');
+      var rowCells = rows.map(row => {
+        return row.split('\t').map(item => item.replaceAll('\r', '')).filter(item => item);
+      })
+      console.log(rowCells)
+      document.body.innerText = pastedText;
+    }
+  </script>
+</body>
+
+</html>
